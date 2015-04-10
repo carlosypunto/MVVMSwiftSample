@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
     var viewModel: DetailViewModel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var amountField: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,25 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         nameField.text = viewModel.name
         amountField.text = viewModel.amount
         nameField.becomeFirstResponder()
+        
+        nameField.addTarget(self, action: "nameChanged", forControlEvents: UIControlEvents.EditingChanged)
+        amountField.addTarget(self, action: "ammountChanged", forControlEvents: UIControlEvents.EditingChanged)
+    }
+    
+    func nameChanged() {
+        viewModel.name = nameField.text
+        viewModel.update()
+        update()
+    }
+    
+    func ammountChanged() {
+        viewModel.amount = amountField.text
+        viewModel.update()
+        update()
+    }
+    
+    func update() {
+        resultLabel.text = viewModel.infoText
     }
     
     
@@ -48,8 +68,6 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
     }
     
     @IBAction func donePressed(sender: AnyObject) {
-        viewModel.name = nameField.text ?? ""
-        viewModel.amount = amountField.text ?? ""
         viewModel.handleDonePressed()
     }
 

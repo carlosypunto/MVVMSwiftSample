@@ -7,6 +7,7 @@ public class DetailViewModel {
     public var title = "New Payback"
     public var name = ""
     public var amount = ""
+    public var infoText = ""
     public weak var delegate: DetailViewModelDelegate?
     
     private var index: Int = -1
@@ -74,6 +75,12 @@ public class DetailViewModel {
         let names = nameComponents
         let amount = (self.amount as NSString).doubleValue
         context.editPayback(index, firstName: names[0], lastname: names[1], amount: amount, updated: NSDate())
+    }
+    
+    func update() {
+        let names = nameComponents
+        let amount = (self.amount as NSString).doubleValue
+        infoText = "\(name)\n\(amount)"
     }
     
 }
