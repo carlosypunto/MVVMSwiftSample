@@ -24,7 +24,7 @@ class MasterTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         
         let item = viewModel.items[indexPath.row]
         cell.textLabel?.text = item.title
@@ -59,7 +59,7 @@ class MasterTableViewController: UITableViewController {
             vc.viewModel = DetailViewModel(delegate: vc)
         }
         else if segue.identifier == "editSegue" {
-            vc.viewModel = DetailViewModel(delegate: vc, index: tableView.indexPathForSelectedRow()!.row)
+            vc.viewModel = DetailViewModel(delegate: vc, index: tableView.indexPathForSelectedRow!.row)
         }
         
     }

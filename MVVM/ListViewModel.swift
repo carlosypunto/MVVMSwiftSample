@@ -8,7 +8,7 @@ public class ListViewModel {
     
     public func refresh() {
         items = context.paybacks.map { self.itemForPayback($0) }
-        println(items)
+        print(items)
     }
     
     func itemForPayback(payback: Payback) -> Item {
