@@ -30,7 +30,7 @@ public class DetailViewModel {
     public convenience init(delegate: DetailViewModelDelegate, index: Int) {
         self.init(delegate: delegate)
         self.index = index
-        println(index)
+        print(index)
         title = "Edit Payback"
         let payback = context.paybacks[index]
         name = payback.firstName + " " + payback.lastName

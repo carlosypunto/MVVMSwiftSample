@@ -27,12 +27,12 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
     }
     
     func nameChanged() {
-        viewModel.name = nameField.text
+        viewModel.name = nameField.text!
         resultLabel.text = viewModel.infoText
     }
     
     func ammountChanged() {
-        viewModel.amount = amountField.text
+        viewModel.amount = amountField.text!
         resultLabel.text = viewModel.infoText
     }
     
