@@ -12,6 +12,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         navigationItem.title = viewModel.title
         nameField.text = viewModel.name
         amountField.text = viewModel.amount
+        amountField.keyboardType = .NumberPad
         nameField.becomeFirstResponder()
         
         nameField.addTarget(self, action: #selector(nameChanged), forControlEvents: UIControlEvents.EditingChanged)
