@@ -14,8 +14,8 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         amountField.text = viewModel.amount
         nameField.becomeFirstResponder()
         
-        nameField.addTarget(self, action: "nameChanged", forControlEvents: UIControlEvents.EditingChanged)
-        amountField.addTarget(self, action: "ammountChanged", forControlEvents: UIControlEvents.EditingChanged)
+        nameField.addTarget(self, action: #selector(nameChanged), forControlEvents: UIControlEvents.EditingChanged)
+        amountField.addTarget(self, action: #selector(ammountChanged), forControlEvents: UIControlEvents.EditingChanged)
     }
     
     func nameChanged() {
