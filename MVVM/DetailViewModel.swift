@@ -9,7 +9,6 @@ public class DetailViewModel {
     public weak var delegate: DetailViewModelDelegate?
     
     public var infoText: String {
-        let names = nameComponents
         let amount = (self.amount as NSString).doubleValue
         return "\(name)\n\(amount)"
     }
