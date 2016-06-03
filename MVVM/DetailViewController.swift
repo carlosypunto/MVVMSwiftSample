@@ -1,11 +1,3 @@
-//
-//  AddViewController.swift
-//  MVVM
-//
-//  Created by carlos on 8/4/15.
-//  Copyright (c) 2015 Carlos García. All rights reserved.
-//
-
 import UIKit
 
 class DetailViewController: UIViewController, DetailViewModelDelegate {
@@ -36,7 +28,6 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         resultLabel.text = viewModel.infoText
     }
     
-    
     // MARK: - AddViewModelDelegate
     
     func showInvalidName() {
@@ -52,8 +43,6 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
     func dismissAddView() {
         navigationController?.popViewControllerAnimated(true)
     }
-    
-    
     
     // MARK: - IBActions
     
