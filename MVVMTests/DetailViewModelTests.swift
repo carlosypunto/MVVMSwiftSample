@@ -57,7 +57,7 @@ class DetailViewModelTests: XCTestCase, DetailViewModelDelegate {
         }
     }
     
-    func testAddPlayback() {
+    func testAddPayback() {
         detailViewModel.name = "John Appleseed"
         detailViewModel.amount = "84.0"
         detailViewModel.handleDonePressed()
@@ -66,7 +66,7 @@ class DetailViewModelTests: XCTestCase, DetailViewModelDelegate {
         XCTAssertTrue(isEqual, "")
     }
     
-    func testSavePlayback() {
+    func testSavePayback() {
         detailViewModel.name = "John Appleseed"
         detailViewModel.amount = "84.0"
         detailViewModel.handleDonePressed()
