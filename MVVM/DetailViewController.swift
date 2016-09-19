@@ -1,11 +1,3 @@
-//
-//  AddViewController.swift
-//  MVVM
-//
-//  Created by carlos on 8/4/15.
-//  Copyright (c) 2015 Carlos García. All rights reserved.
-//
-
 import UIKit
 
 class DetailViewController: UIViewController, DetailViewModelDelegate {
@@ -20,10 +12,11 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         navigationItem.title = viewModel.title
         nameField.text = viewModel.name
         amountField.text = viewModel.amount
+        amountField.keyboardType = .NumberPad
         nameField.becomeFirstResponder()
         
-        nameField.addTarget(self, action: "nameChanged", forControlEvents: UIControlEvents.EditingChanged)
-        amountField.addTarget(self, action: "ammountChanged", forControlEvents: UIControlEvents.EditingChanged)
+        nameField.addTarget(self, action: #selector(nameChanged), forControlEvents: UIControlEvents.EditingChanged)
+        amountField.addTarget(self, action: #selector(ammountChanged), forControlEvents: UIControlEvents.EditingChanged)
     }
     
     func nameChanged() {
@@ -35,7 +28,6 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         viewModel.amount = amountField.text!
         resultLabel.text = viewModel.infoText
     }
-    
     
     // MARK: - AddViewModelDelegate
     
@@ -52,8 +44,6 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
     func dismissAddView() {
         navigationController?.popViewControllerAnimated(true)
     }
-    
-    
     
     // MARK: - IBActions
     
