@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  MVVM
-//
-//  Created by carlos on 8/4/15.
-//  Copyright (c) 2015 Carlos García. All rights reserved.
-//
-
 import UIKit
 import CoreData
 

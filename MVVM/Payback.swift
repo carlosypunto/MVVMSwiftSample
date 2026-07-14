@@ -1,4 +1,3 @@
-
 import Foundation
 
 class Payback: Equatable {
@@ -16,7 +15,6 @@ class Payback: Equatable {
         self.updatedAt = createdAt
         self.amount = amount
     }
-    
 }
 
 func ==(l: Payback, r: Payback) -> Bool {
